@@ -47,15 +47,15 @@
      }">
 
         <p>Your sentence is: </p>
-        <div x-text="sentence"></div>
+        <p style="color :black"><div x-text="sentence" style="color :black"></div></p>
         
         <p>longest word: </p>
-        <div x-text="longestWord" style="border-radius: 0.5em;"> </div>
+        <div x-text="longestWord" style="color :black"> </div>
         
         <p>shortest word: </p>
-        <div x-text="shortestWord" style="border-radius: 0.5em;"></div>
+        <div x-text="shortestWord" style="color :black"></div>
         <p>sum of letters: </p>
-        <div x-text="sum" style="border-radius: 0.5em;"></div>
+        <div x-text="sum" style="color :black"></div>
         
         <input type="text" x-model="sentence">
         <input type="button" value="Find words" @click="findWord()">
