@@ -50,12 +50,12 @@
         <div x-text="sentence"></div>
         
         <p>longest word: </p>
-        <div x-text="longestWord"> </div>
+        <div x-text="longestWord" style="border-radius: 0.5em;"> </div>
         
         <p>shortest word: </p>
-        <div x-text="shortestWord"></div>
+        <div x-text="shortestWord" style="border-radius: 0.5em;"></div>
         <p>sum of letters: </p>
-        <div x-text="sum"></div>
+        <div x-text="sum" style="border-radius: 0.5em;"></div>
         
         <input type="text" x-model="sentence">
         <input type="button" value="Find words" @click="findWord()">
