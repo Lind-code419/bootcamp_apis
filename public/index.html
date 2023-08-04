@@ -14,7 +14,7 @@
             color: orange; text-align: center;">
     <h1>Wordgame API app</h1>
     <h3 style="color: black;">Enter a sentence and click the button to calculate the longest word, the shortest word and
-        the amount of words in the sentence: </h3>
+        the amount of letters in the sentence: </h3>
 
     <div x-data="{
         sentence : '',
@@ -33,6 +33,7 @@
                     }
                     else {
                         console.log(result.data.longestWord);
+                        this.longestWord = result.data.longestWord;
                         this.shortestWord = result.data.shortestWord;
                         this.sum = result.data.sum
                     } 
@@ -45,19 +46,17 @@
         }
      }">
 
-
-        <div x-text="sentence">
-
-        </div>
-        <div x-text="longestWord">
-
-        </div>
-        <div x-text="shortestWord">
-
-        </div>
-        <div x-text="sum">
-
-        </div>
+        <p>Your sentence is: </p>
+        <div x-text="sentence"></div>
+        
+        <p>longest word: </p>
+        <div x-text="longestWord"> </div>
+        
+        <p>shortest word: </p>
+        <div x-text="shortestWord"></div>
+        <p>sum of letters: </p>
+        <div x-text="sum"></div>
+        
         <input type="text" x-model="sentence">
         <input type="button" value="Find words" @click="findWord()">
 
