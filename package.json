@@ -26,7 +26,7 @@
   "scripts": {
     "dev": "",
     "test": "",
-    "start": "npm"
+    "start": "node index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
