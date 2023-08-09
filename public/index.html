@@ -39,10 +39,27 @@
                     } 
 
                     })
-                    //console.log(longestWord)
+                },
+        billItems : '',
+        billResult : '',
+        totalBill() {
+            //call api
+                axios
+                .post(`/api/phonebill/total[%{billItems}]`)
+                .then(result => {
 
+                    if (result.data.error) {
+                        this.billItems = result.data.error
+                    }
+                    else {
+                        console.log(result.data.longestWord);
+                        this.longestWord = result.data.longestWord;
+                        this.shortestWord = result.data.shortestWord;
+                        this.sum = result.data.sum
+                    } 
 
-            
+                    })
+
         }
      }">
 
@@ -65,18 +82,24 @@
     <hr>
     <h1>Total phone bill</h1>
     <h3 style="color: black;"><p>Type in the calls and smses, separated by a comma: </p></h3>
+    <p>Your bill consists of: </p>
+        <p style="color :black"><div x-text="billItems" style="color :black"></div></p>
+        
+        <p>Your total bill is: </p>
+        <div x-text="totalBill" style="color :black"> </div>
+    
     <div>
         <input type="text" x-model="billItems">
-        <input type="button" value="Calculate cost" @click="findWord()">
+        <input type="button" value="Calculate cost" @click="totalBill()">
 
     </div>
     <hr>
-    <h1>Total phone bill</h1>
+    <h1>Enough Airtime</h1>
     <h3 style="color: black;"><p>Type in the calls and smses, separated by a comma, in the first box and the current balance in the second box, then click the button:</p></h3>
     <div>
         <input type="text" x-model="billItems2">
         <input type="text" x-model="airtime">
-        <input type="button" value="Calculate cost" @click="findWord()">
+        <input type="button" value="Calculate remaining airtime " @click="findWord()">
 
     </div>
     <hr>
