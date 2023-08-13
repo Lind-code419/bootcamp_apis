@@ -45,7 +45,7 @@
         totalBill() {
             //call api
                 axios
-                .post(`/api/phonebill/total[%{billItems}]`)
+                .post(`/api/phonebill/total[${billItems}]`)
                 .then(result => {
 
                     if (result.data.error) {
@@ -64,7 +64,7 @@
         remainingAirtime() {
             //call api
                 axios
-                .post(`/api/phonebill/enough[%{billItems2}]`)
+                .post(`/api/phonebill/enough[${billItems2}]`)
                 .then(result => {
 
                     if (result.data.error) {
@@ -115,9 +115,9 @@
     <h1>Enough Airtime</h1>
     <h3 style="color: black;"><p>Type in the calls and smses, separated by a comma, in the first box and the current balance in the second box, then click the button:</p></h3>
     <p>Your airtime usage is: </p>
-        <div x-text="totalBill" style="color :black"> </div>
+        <div x-text="billItems2" style="color :black"> </div>
     <p>Your remaining airtime is: </p>
-        <div x-text="totalBill" style="color :black"> </div>
+        <div x-text="airtimeLeft" style="color :black"> </div>
     
     <div>
         <input type="text" x-model="billItems2">
