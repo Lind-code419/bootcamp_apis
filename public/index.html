@@ -82,51 +82,58 @@
      }">
 
         <p>Your sentence is: </p>
-        <p style="color :black"><div x-text="sentence" style="color :black"></div></p>
-        
+        <p style="color :black">
+        <div x-text="sentence" style="color :black"></div>
+        </p>
+
         <p>longest word: </p>
         <div x-text="longestWord" style="color :black"> </div>
-        
+
         <p>shortest word: </p>
         <div x-text="shortestWord" style="color :black"></div>
         <p>sum of letters: </p>
         <div x-text="sum" style="color :black"></div>
-        
+
         <input type="text" x-model="sentence">
         <input type="button" value="Find words" @click="findWord()">
 
 
-    </div>
-    <hr>
-    <h1>Total phone bill</h1>
-    <h3 style="color: black;"><p>Type in the calls and smses, separated by a comma: </p></h3>
-    <p>Your bill consists of: </p>
+
+        <hr>
+        <h1>Total phone bill</h1>
+        <h3 style="color: black;">
+            <p>Type in the calls and smses, separated by a comma: </p>
+        </h3>
+        <p>Your bill consists of: </p>
         <div x-text="billItems" style="color :black"></div>
-        
+
         <p>Your total bill is: </p>
         <div x-text="totalBill" style="color :black"> </div>
-    
-    <div>
-        <input type="text" x-model="billItems">
-        <input type="button" value="Calculate cost" @click="totalBill()">
 
-    </div>
-    <hr>
-    <h1>Enough Airtime</h1>
-    <h3 style="color: black;"><p>Type in the calls and smses, separated by a comma, in the first box and the current balance in the second box, then click the button:</p></h3>
-    <p>Your airtime usage is: </p>
+        <div>
+            <input type="text" x-model="billItems">
+            <input type="button" value="Calculate cost" @click="totalBill()">
+
+        </div>
+        <hr>
+        <h1>Enough Airtime</h1>
+        <h3 style="color: black;">
+            <p>Type in the calls and smses, separated by a comma, in the first box and the current balance in the second
+                box, then click the button:</p>
+        </h3>
+        <p>Your airtime usage is: </p>
         <div x-text="billItems2" style="color :black"> </div>
-    <p>Your remaining airtime is: </p>
+        <p>Your remaining airtime is: </p>
         <div x-text="airtimeLeft" style="color :black"> </div>
-    
-    <div>
-        <input type="text" x-model="billItems2">
-        <input type="text" x-model="airtime">
-        <input type="button" value="Calculate remaining airtime " @click="remainingAirtime()">
 
+        <div>
+            <input type="text" x-model="billItems2">
+            <input type="text" x-model="airtime">
+            <input type="button" value="Calculate remaining airtime " @click="remainingAirtime()">
+
+        </div>
+        <hr>
     </div>
-    <hr>
-
 </body>
 
 </html>
