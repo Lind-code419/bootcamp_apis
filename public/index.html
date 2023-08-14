@@ -45,7 +45,7 @@
         totalBill() {
             //call api
                 axios
-                .post(`/api/phonebill/total[${billItems}]`)
+                .post(`/api/phonebill/total`, `${billItems}]`)
                 .then(result => {
 
                     if (result.data.error) {
@@ -60,7 +60,7 @@
                     })
                  },
         billItems2 : '',
-        airtime: '',
+        airtime : '',
         airtimeLeft : '',
         remainingAirtime() {
             //call api
