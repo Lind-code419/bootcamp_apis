@@ -49,10 +49,10 @@
                 .then(result => {
 
                     if (result.data.error) {
-                        this.billItems = result.data.bill
+                        this.billResult = result.data.bill
                     }
                     else {
-                        console.log(result.data.result);
+                        console.log(result.data.bill);
                         this.billResult = result.data.bill;
                       
                     } 
