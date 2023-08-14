@@ -54,7 +54,7 @@ app.post('/api/phonebill/total', function(req, res) {
     const bill = req.body.bill;
     
     res.json({
-        result : totalPhoneBill(bill)
+        result : totalPhoneBill(bill.billItems)
     });
 
 });
