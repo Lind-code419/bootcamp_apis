@@ -45,15 +45,15 @@
         totalBill() {
             //call api
                 axios
-                .post(`/api/phonebill/total`, `[${billItems}]`)
+                .post(`/api/phonebill/total`, {bill: billItems})
                 .then(result => {
 
                     if (result.data.error) {
-                        this.billItems = result.data.error
+                        this.billItems = result.data.bill
                     }
                     else {
                         console.log(result.data.result);
-                        this.billResult = result.data.result;
+                        this.billResult = result.data.bill;
                       
                     } 
 
