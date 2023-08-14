@@ -40,12 +40,12 @@
 
                     })
                 },
-        billItems : '',
+        bill : '',
         billResult : '',
         totalBill() {
             //call api
                 axios
-                .post(`/api/phonebill/total`, {bill : billItems})
+                .post(`/api/phonebill/total`, {bill})
                 .then(result => {
 
                     if (result.data.error) {
@@ -106,7 +106,7 @@
             <p>Type in the calls and smses, separated by a comma: </p>
         </h3>
         <p>Your bill consists of: </p>
-        <div x-text="billItems" style="color :black"></div>
+        <div x-text="bill" style="color :black"></div>
 
         <p>Your total bill is: </p>
         <div x-text="billResult" style="color :black"> </div>
