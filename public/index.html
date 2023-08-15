@@ -45,7 +45,7 @@
         totalBill() {
             //call api
                 axios
-                .post(`/api/phonebill/total`, {bill : ''})
+                .post(`/api/phonebill/total`, {bill : this.bill})
                 .then(result => {
 
                     if (result.data.error) {
