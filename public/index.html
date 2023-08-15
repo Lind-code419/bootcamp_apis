@@ -59,13 +59,14 @@
 
                     })
                  },
-        billItems2 : '',
+        usage : '',
+        available : '',
         airtime : '',
         airtimeLeft : '',
         remainingAirtime() {
             //call api
                 axios
-                .post(`/api/phonebill/enough`,{billItems2})
+                .post(`/api/phonebill/enough`,{available : this.available, usage = this.usage})
                 .then(result => {
 
                     if (result.data.error) {
@@ -73,7 +74,7 @@
                     }
                     else {
                         console.log(result.data.usage);
-                        this.airtimeLeft = result.data.available;
+                        this.airtimeLeft = result.data.result;
                       
                     } 
 
@@ -103,8 +104,9 @@
         <hr>
         <h1>Total phone bill</h1>
         <h3 style="color: black;">
-            <p>Type in the calls and smses, separated by a comma: </p>
+            <p>Type in the calls and smses, separated by a comma (no spaces): </p>
         </h3>
+        <p>Example: call,sms,call,call</p>
         <p>Your bill consists of: </p>
         <div x-text="bill" style="color :black"></div>
 
